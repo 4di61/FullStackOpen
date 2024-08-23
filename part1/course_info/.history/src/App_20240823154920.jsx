@@ -1,5 +1,5 @@
 const Header = (props)=>{
-  return (<h1>{props.course_name}</h1>)
+  return (<h1>{props.course}</h1>)
 }
 const Part = (props)=>{
   return (
