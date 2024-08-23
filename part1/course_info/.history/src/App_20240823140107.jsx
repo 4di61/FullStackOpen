@@ -4,7 +4,7 @@ const Header = (props)=>{
 const Part = (props)=>{
   return (
     <p>
-      {props.part} {props.exercise}
+      {props.part} {props.exercises}
     </p>
   )
 }
@@ -13,7 +13,7 @@ const Content = (props)=>{
   <>
     <Part part ={props.part1} exercise={props.exercises1}/>
     <Part part ={props.part2} exercise={props.exercises2}/>
-    <Part part ={props.part3} exercise={props.exercises3}/>
+    <Part part ={props.part1} exercise={props.exercises1}/>
   </>
   )
 }
