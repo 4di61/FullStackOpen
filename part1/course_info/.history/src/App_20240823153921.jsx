@@ -11,18 +11,16 @@ const Part = (props)=>{
 const Content = (props)=>{
   return (
   <>
-    <Part part ={props.parts[0]}/>
-    <Part part ={props.parts[1]}/>
-    <Part part ={props.parts[2]}/>
+    <Part part ={props.part1}/>
+    <Part part ={props.part2}/>
+    <Part part ={props.part3}/>
   </>
   )
 }
 
 const Total = (props) => {
-  let total = 0
-  props.parts.forEach(part=> total+=(part.exercises))
   return(
-    <p>Number of exercises {total}</p>
+    <p>Number of exercises {props.exercises1 + props.exercises2 + props.exercises3}</p>
   )
 }
 

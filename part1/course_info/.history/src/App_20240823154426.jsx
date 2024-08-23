@@ -19,8 +19,9 @@ const Content = (props)=>{
 }
 
 const Total = (props) => {
-  let total = 0
-  props.parts.forEach(part=> total+=(part.exercises))
+  let total =0
+  total = props.parts.forEach(part=> total+(part.exercises))
+  console.log(total)
   return(
     <p>Number of exercises {total}</p>
   )
