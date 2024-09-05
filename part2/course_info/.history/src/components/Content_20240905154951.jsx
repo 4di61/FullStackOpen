@@ -1,7 +1,7 @@
 import Part from './Part'
 
 const Content = ({parts})=>{
-    const total = parts.reduce((acc, curr) => (acc+curr.exercises),0)
+    const total = parts.reduce((acc, curr) => (acc+curr.exercises))
 
     return (
     <>
