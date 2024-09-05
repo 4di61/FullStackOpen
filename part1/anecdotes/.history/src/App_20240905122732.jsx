@@ -56,7 +56,7 @@ const App = () => {
       <h2>Anecdote with the most votes</h2>
       {anecdotes[maxIndex]}
       <br />
-      has {copy[maxIndex]} votes
+      has {anecdotes[maxIndex]} votes
     </div>
     </div>
   )

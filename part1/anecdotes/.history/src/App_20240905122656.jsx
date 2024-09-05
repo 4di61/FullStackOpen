@@ -38,8 +38,8 @@ const App = () => {
       (curr>copy[acc]?index:acc),0)
     return maxIndex
   }
-  const maxIndex = getMaxVotedAnecdoteIndex()
-
+  maxIndex = getMaxVotedAnecdoteIndex()
+  
   return (
     <div>
     <div>

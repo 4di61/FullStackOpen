@@ -38,7 +38,6 @@ const App = () => {
       (curr>copy[acc]?index:acc),0)
     return maxIndex
   }
-  const maxIndex = getMaxVotedAnecdoteIndex()
 
   return (
     <div>
@@ -54,9 +53,9 @@ const App = () => {
     </div>
     <div>
       <h2>Anecdote with the most votes</h2>
-      {anecdotes[maxIndex]}
+      {getMaxVotedAnecdote()}
       <br />
-      has {copy[maxIndex]} votes
+      has {copy[selected]} votes
     </div>
     </div>
   )
