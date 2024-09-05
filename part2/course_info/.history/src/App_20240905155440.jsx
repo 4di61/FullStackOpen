@@ -48,12 +48,11 @@ const App = () => {
     }
   ]
 
-  return <>
-    <h1>Web Development curriculum</h1>
-    {courses.map((course) => (
-      <Course course = {course}/>
-    ))}
+  return 
+  <>
+    {}
   </>
+  <Course course={courses} />
 }
 
 export default App
