@@ -19,7 +19,7 @@ const Feedback = ({incrementGood, incrementNeutral, incrementBad})=> (
 
 const Statistics = ({good, neutral, bad})=>{
   const all = good + bad + neutral
-  const average = (good - bad)/all
+  const average = all/3
   const positive = good/(all)*100
   return <div>
     <h3>
@@ -34,9 +34,9 @@ const Statistics = ({good, neutral, bad})=>{
       <br/>
       all {all}
       <br/>
-      average {average}
+      average {good + neutral + bad}
       <br/>
-      positive {positive||0}%
+      positive {good + neutral + bad}
     </p>
   </div>
 }

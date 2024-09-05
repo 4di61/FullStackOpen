@@ -18,10 +18,7 @@ const Feedback = ({incrementGood, incrementNeutral, incrementBad})=> (
 )
 
 const Statistics = ({good, neutral, bad})=>{
-  const all = good + bad + neutral
-  const average = (good - bad)/all
-  const positive = good/(all)*100
-  return <div>
+  reut<div>
     <h3>
       statistics
     </h3>
@@ -32,11 +29,11 @@ const Statistics = ({good, neutral, bad})=>{
       <br />
       bad {bad}
       <br/>
-      all {all}
+      all {good + neutral + bad}
       <br/>
-      average {average}
+      average {good + neutral + bad}
       <br/>
-      positive {positive||0}%
+      positive {good + neutral + bad}
     </p>
   </div>
 }
