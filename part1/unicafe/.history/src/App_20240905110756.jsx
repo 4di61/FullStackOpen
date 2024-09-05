@@ -6,16 +6,11 @@ const Button = ({text,onClick})=> (
     {text||"untitled"}
   </button>
 )
-
-const StatisticLine = ({text, value}) => (
-  
-  <div>
-    {text} {value}
-  </div>
-)
-
 const Feedback = ({incrementGood, incrementNeutral, incrementBad})=> (
   <div>
+    <h3>
+      Give Feedback
+    </h3>
     <Button text = "good" onClick={incrementGood}/>
     <Button text = "neutral" onClick={incrementNeutral}/>
     <Button text = "bad" onClick={incrementBad}/>
@@ -26,16 +21,26 @@ const Statistics = ({good, neutral, bad})=>{
   const all = good + bad + neutral
   const average = (good - bad)/all
   const positive = good/(all)*100
-  if(all === 0){
-    return <p>No feedback given</p>
+  if(al === 0){
+    return 
   }
   return <div>
-    <StatisticLine text="good" value = {good}/>
-    <StatisticLine text="neutral" value = {neutral}/>
-    <StatisticLine text="bad" value = {bad}/>
-    <StatisticLine text="all" value = {all}/>
-    <StatisticLine text="average" value = {average}/>
-    <StatisticLine text="positive" value = {positive.toString().concat("%")}/>
+    <h3>
+      statistics
+    </h3>
+    <p>
+      good {good}
+      <br />
+      neutral {neutral}
+      <br />
+      bad {bad}
+      <br/>
+      all {all}
+      <br/>
+      average {average||0}
+      <br/>
+      positive {positive||0}%
+    </p>
   </div>
 }
 
@@ -53,13 +58,12 @@ const App = () => {
 
   return (
     <div>
-      <h3>Give Feedback</h3>
       <Feedback 
       incrementGood={incrementStateValue(good, setGood)}
       incrementBad={incrementStateValue(bad, setBad)}
       incrementNeutral={incrementStateValue(neutral, setNeutral)}
+
       />
-      <h3>Statistics</h3>
       <Statistics
       good = {good}
       bad = {bad}

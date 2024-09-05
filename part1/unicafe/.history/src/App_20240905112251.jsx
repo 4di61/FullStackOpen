@@ -8,10 +8,9 @@ const Button = ({text,onClick})=> (
 )
 
 const StatisticLine = ({text, value}) => (
-  
   <div>
     {text} {value}
-  </div>
+  </p>
 )
 
 const Feedback = ({incrementGood, incrementNeutral, incrementBad})=> (

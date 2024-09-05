@@ -9,7 +9,7 @@ const Button = ({text,onClick})=> (
 
 const StatisticLine = ({text, value}) => (
   
-  <div>
+  <div
     {text} {value}
   </div>
 )

@@ -8,10 +8,10 @@ const Button = ({text,onClick})=> (
 )
 
 const StatisticLine = ({text, value}) => (
-  
-  <div>
+  <textarea>
     {text} {value}
-  </div>
+
+  </textarea>
 )
 
 const Feedback = ({incrementGood, incrementNeutral, incrementBad})=> (
