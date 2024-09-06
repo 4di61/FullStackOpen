@@ -15,7 +15,6 @@ const App = () => {
     event.preventDefault();
     if (!persons.map(person => person.name).includes(newName))
       setPersons([...persons, { name: newName }])
-    else
       alert(`${newName} is already added to phonebook`)
     setNewName('')
   }

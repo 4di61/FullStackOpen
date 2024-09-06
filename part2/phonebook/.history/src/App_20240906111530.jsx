@@ -13,11 +13,10 @@ const App = () => {
 
   const addNewName = (event) => {
     event.preventDefault();
-    if (!persons.map(person => person.name).includes(newName))
-      setPersons([...persons, { name: newName }])
-    else
-      alert(`${newName} is already added to phonebook`)
-    setNewName('')
+    console.log(persons.map(person=> person.name).find);
+    
+    // if(newName)
+    setPersons([...persons,{name: newName}])
   }
 
   return (
@@ -25,7 +24,7 @@ const App = () => {
       <h2>Phonebook</h2>
       <form onSubmit={addNewName}>
         <div>
-          name: <input value={newName} onChange={handleInputChange}/>
+          name: <input onChange={handleInputChange}/>
         </div>
         <div>
           <button type="submit">add</button>
