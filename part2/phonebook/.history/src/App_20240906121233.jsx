@@ -1,7 +1,14 @@
 import { useState } from 'react'
-import Filter from './components/Filter'
-import PersonForm from './components/PersonForm'
-import Persons from './components/Persons'
+
+
+
+
+
+const Persons = ({list}) => {
+  return <ul>
+  {list.map(person => <li key={person.id}>{person.name} { person.number}</li>)}
+</ul>
+}
 
 const App = () => {
   const [persons, setPersons] = useState([
