@@ -7,7 +7,7 @@ const App = () => {
   const [newNote, setNewNote] = useState("a new note...");
   const [showAll, setShowAll] = useState(true);
 
-  useEffect(() => {
+  // useEffect(() => {
     console.log('effect')
     axios
       .get('http://localhost:3001/notes')

@@ -4,6 +4,12 @@ import PersonForm from './components/PersonForm'
 import Persons from './components/Persons'
 import axios from 'axios'
 
+const promise = axios.get('http://localhost:3001/notes')
+console.log(promise)
+
+const promise2 = axios.get('http://localhost:3001/foobar')
+console.log(promise2)
+
 const App = () => {
   const [persons, setPersons] = useState([]) 
   const [newName, setNewName] = useState('')
@@ -11,11 +17,7 @@ const App = () => {
   const [newFilter, setFilter] = useState('')
 
   useEffect(() => {
-    axios.get("http://localhost:3001/persons").then(
-      (response) => {
-        setPersons(response.data)
-      }
-    )
+    axios.get("http://localhost:3001/persons");
   },[])
 
   const onFilterChange = (event) => {

@@ -11,11 +11,7 @@ const App = () => {
   const [newFilter, setFilter] = useState('')
 
   useEffect(() => {
-    axios.get("http://localhost:3001/persons").then(
-      (response) => {
-        setPersons(response.data)
-      }
-    )
+    axios.get("http://localhost:3001/persons");
   },[])
 
   const onFilterChange = (event) => {

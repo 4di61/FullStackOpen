@@ -3,7 +3,7 @@ import axios from 'axios'
 import Note from "./components/Note";
 
 const App = () => {
-  const [notes, setNotes] = useState([]);
+  const [notes, setNotes] = useState(props.notes);
   const [newNote, setNewNote] = useState("a new note...");
   const [showAll, setShowAll] = useState(true);
 
