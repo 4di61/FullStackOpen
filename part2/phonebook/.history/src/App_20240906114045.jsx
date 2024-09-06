@@ -16,8 +16,8 @@ const App = () => {
   }
 
   const getFilteredList = () => {
-    return persons.filter((person) => {
-      return person.name.toLowerCase().includes(newFilter.toLowerCase())
+    persons.filter((person) => {
+      person.name.toLowerCase().includes(new)
     })
   }
 
@@ -44,7 +44,6 @@ const App = () => {
       <h2>Phonebook</h2>
       filter shown with 
       <input type="text" onChange={handleFilterValue} />
-      <h2>add a new</h2>
       <form onSubmit={addNewPerson}>
         <div>
           name: <input value={newName} onChange={handleNameChange}/>
@@ -60,7 +59,7 @@ const App = () => {
       </form>
       <h2>Numbers</h2>
       <ul>
-        {getFilteredList().map(person => <li key={person.id}>{person.name} { person.number}</li>)}
+        {persons.map(person => <li key={person.id}>{person.name} { person.number}</li>)}
       </ul>
       <div>
           

@@ -44,7 +44,6 @@ const App = () => {
       <h2>Phonebook</h2>
       filter shown with 
       <input type="text" onChange={handleFilterValue} />
-      <h2>add a new</h2>
       <form onSubmit={addNewPerson}>
         <div>
           name: <input value={newName} onChange={handleNameChange}/>

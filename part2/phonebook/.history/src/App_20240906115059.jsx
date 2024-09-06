@@ -16,8 +16,12 @@ const App = () => {
   }
 
   const getFilteredList = () => {
+console.log(persons.filter((person) => {
+  person.name.toLowerCase().includes(newFilter.toLowerCase())
+}))
+
     return persons.filter((person) => {
-      return person.name.toLowerCase().includes(newFilter.toLowerCase())
+      person.name.toLowerCase().includes(newFilter.toLowerCase())
     })
   }
 
@@ -44,7 +48,6 @@ const App = () => {
       <h2>Phonebook</h2>
       filter shown with 
       <input type="text" onChange={handleFilterValue} />
-      <h2>add a new</h2>
       <form onSubmit={addNewPerson}>
         <div>
           name: <input value={newName} onChange={handleNameChange}/>
