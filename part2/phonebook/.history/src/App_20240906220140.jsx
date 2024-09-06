@@ -42,7 +42,8 @@ const App = () => {
       const matchPerson = persons.find(
         (person) => person.name.toLowerCase() === newName.toLowerCase()
       );
-
+      console.log(matchPerson);
+      
       if (!matchPerson) {
         const newPerson = { name: newName, number: newNumber };
         PersonServices.create(newPerson).then((changedPerson) => {
@@ -57,18 +58,20 @@ const App = () => {
           const updatedPerson = {
             ...matchPerson,
             number: newNumber,
-          };
-          PersonServices.update(matchPerson.id, updatedPerson);
-          setPersons(
-            persons.map((person) =>
-              person === matchPerson ? updatedPerson : person
-            )
-          );
+          }
+          PersonServices.update(matchPerson.id, {
+            ...matchPerson,
+            number: newNumber,
+          });
+          setPersons(persons.map(person=> person===matchPerson?{
+            ...matchPerson,
+            number: newNumber,
+          }:person));
         }
       }
-      setNewName("");
-      setNewNumber("");
     }
+    setNewName("");
+    setNewNumber("");
   };
 
   const findPersonByID = (id) => {

@@ -36,39 +36,17 @@ const App = () => {
 
   const addNewPerson = (event) => {
     event.preventDefault();
-    if (!(newName && newNumber)) {
-      alert("Empty values are not allowed");
+    if (!persons.map((person) => person.name).includes(newName)) {
+      const newPerson = { name: newName, number: newNumber };
+      PersonServices.create(newPerson).then((changedPerson) => {
+        setPersons([...persons, changedPerson]);
+      });
     } else {
-      const matchPerson = persons.find(
-        (person) => person.name.toLowerCase() === newName.toLowerCase()
-      );
-
-      if (!matchPerson) {
-        const newPerson = { name: newName, number: newNumber };
-        PersonServices.create(newPerson).then((changedPerson) => {
-          setPersons([...persons, changedPerson]);
-        });
-      } else {
-        if (
-          confirm(
-            `${newName} is already added to phonebook, replace the old number with a new one?`
-          )
-        ) {
-          const updatedPerson = {
-            ...matchPerson,
-            number: newNumber,
-          };
-          PersonServices.update(matchPerson.id, updatedPerson);
-          setPersons(
-            persons.map((person) =>
-              person === matchPerson ? updatedPerson : person
-            )
-          );
-        }
-      }
-      setNewName("");
-      setNewNumber("");
+      if (confirm(`${newName} is already added to phonebook`)) 
+      
     }
+    setNewName("");
+    setNewNumber("");
   };
 
   const findPersonByID = (id) => {

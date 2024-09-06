@@ -42,6 +42,7 @@ const App = () => {
       const matchPerson = persons.find(
         (person) => person.name.toLowerCase() === newName.toLowerCase()
       );
+      console.log(matchPerson);
 
       if (!matchPerson) {
         const newPerson = { name: newName, number: newNumber };
@@ -67,8 +68,9 @@ const App = () => {
         }
       }
       setNewName("");
-      setNewNumber("");
+    setNewNumber("");
     }
+    
   };
 
   const findPersonByID = (id) => {

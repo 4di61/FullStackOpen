@@ -42,7 +42,8 @@ const App = () => {
       const matchPerson = persons.find(
         (person) => person.name.toLowerCase() === newName.toLowerCase()
       );
-
+      console.log(matchPerson);
+      
       if (!matchPerson) {
         const newPerson = { name: newName, number: newNumber };
         PersonServices.create(newPerson).then((changedPerson) => {
@@ -54,21 +55,16 @@ const App = () => {
             `${newName} is already added to phonebook, replace the old number with a new one?`
           )
         ) {
-          const updatedPerson = {
+          PersonServices.update(matchPerson.id, {
             ...matchPerson,
             number: newNumber,
-          };
-          PersonServices.update(matchPerson.id, updatedPerson);
-          setPersons(
-            persons.map((person) =>
-              person === matchPerson ? updatedPerson : person
-            )
-          );
+          });
+          setPersons();
         }
       }
-      setNewName("");
-      setNewNumber("");
     }
+    setNewName("");
+    setNewNumber("");
   };
 
   const findPersonByID = (id) => {
