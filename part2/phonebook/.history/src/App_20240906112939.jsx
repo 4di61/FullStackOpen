@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 const App = () => {
   const [persons, setPersons] = useState([
-    { name: 'Arto Hellas', number: '123456789'}
+    { name: 'Arto Hellas' }
   ]) 
   const [newName, setNewName] = useState('')
   const [newNumber, setNewNumber] = useState('')
@@ -18,11 +18,10 @@ const App = () => {
   const addNewPerson = (event) => {
     event.preventDefault();
     if (!persons.map(person => person.name).includes(newName))
-      setPersons([...persons, { name: newName, number: newNumber }])
+      setPersons([...persons, { name: newName }])
     else
       alert(`${newName} is already added to phonebook`)
     setNewName('')
-    setNewNumber('')
   }
 
   return (
@@ -43,7 +42,7 @@ const App = () => {
       </form>
       <h2>Numbers</h2>
       <ul>
-        {persons.map(person => <li key={person.name}>{person.name} { person.number}</li>)}
+        {persons.map(person => <li key={person.name}>{person.name}</li>)}
       </ul>
       <div>
           
