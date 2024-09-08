@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import countryService from "./services/countryService";
 
 const App = () => {
-  console.log();
+  console.log(import.meta.env.VITE_WEATHER_API_KEY);
   const [countryList, setCountryList] = useState([]);
   const [filterValue, setFilterValue] = useState("");
 

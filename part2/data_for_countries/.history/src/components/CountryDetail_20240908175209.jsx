@@ -4,7 +4,7 @@ import weatherService from "../services/weatherService";
 const CountryDetail = ({ country, detailed }) => {
   const { name, languages, flags, capital, area } = country;
   const [showDetail, setShowDetail] = useState(detailed);
-  const [weather, setWeather] = useState({ condition: {} });
+  const [weather, setWeather] = useState({});
 
   if (!showDetail) {
     return (
@@ -13,12 +13,12 @@ const CountryDetail = ({ country, detailed }) => {
         <button onClick={() => setShowDetail(!showDetail)}>show</button>
       </div>
     );
-  }
+}
   useEffect(() => {
     weatherService.getWeather(capital).then((weather) => {
       setWeather(weather);
     });
-  }, []);
+  }, {});
 
   return (
     <div className="countryDetail">
@@ -36,12 +36,13 @@ const CountryDetail = ({ country, detailed }) => {
           <li key={language}>{language}</li>
         ))}
       </ul>
-      <img id="flag" src={flags.png} alt={flags.alt} />
+          <img id="flag" src={flags.png} alt={flags.alt} />
+          {
+              
+          }
       <h2>Weather in {name}</h2>
       temperature {weather.temperature} Celsius
-      <br />
       <img src={weather.condition.icon} alt={weather.condition.text} />
-      <br />
       wind {weather.wind} kph
     </div>
   );

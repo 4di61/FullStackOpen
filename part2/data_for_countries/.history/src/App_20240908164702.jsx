@@ -4,9 +4,9 @@ import { useEffect, useState } from "react";
 import countryService from "./services/countryService";
 
 const App = () => {
-  console.log();
-  const [countryList, setCountryList] = useState([]);
+  const [countryList, setCountryList] = useState∏([]);
   const [filterValue, setFilterValue] = useState("");
+  const [showDetailList, setShowDetailList] = useState([]);
 
   const getFilteredCountryList = () => {
     if (filterValue === "") return null;

@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import weatherService from "../services/weatherService";
 
-const CountryDetail = ({ country, detailed }) => {
+const CountryDetail = ({ country,  detailed}) => {
   const { name, languages, flags, capital, area } = country;
   const [showDetail, setShowDetail] = useState(detailed);
-  const [weather, setWeather] = useState({ condition: {} });
-
+    
+    
   if (!showDetail) {
     return (
       <div className="countryDetail">
@@ -14,13 +14,7 @@ const CountryDetail = ({ country, detailed }) => {
       </div>
     );
   }
-  useEffect(() => {
-    weatherService.getWeather(capital).then((weather) => {
-      setWeather(weather);
-    });
-  }, []);
-
-  return (
+  return 
     <div className="countryDetail">
       <h2>
         {name}
@@ -36,13 +30,10 @@ const CountryDetail = ({ country, detailed }) => {
           <li key={language}>{language}</li>
         ))}
       </ul>
-      <img id="flag" src={flags.png} alt={flags.alt} />
-      <h2>Weather in {name}</h2>
-      temperature {weather.temperature} Celsius
-      <br />
-      <img src={weather.condition.icon} alt={weather.condition.text} />
-      <br />
-      wind {weather.wind} kph
+          <img id="flag" src={flags.png} alt={flags.alt} />
+          <h2>Weather in {name}</h2>
+          {/* temperature icon wind */}
+          
     </div>
   );
 };
